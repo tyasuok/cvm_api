@@ -1,0 +1,4 @@
+*.csv
+*.drawio
+old/*
+__pycache__
