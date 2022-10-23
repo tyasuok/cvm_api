@@ -4,23 +4,6 @@ import requests
 import zipfile
 import pandas as pd
 
-class cvm_dados:
-    def __init__(self, link):
-        self.link = link
-
-    def get_data(self):
-        self.data = requests.get(self.link)
-
-    def list_files(self):
-        return zipfile.ZipFile(io.BytesIO(self.data.content)).namelist()
-
-    def select_file(self, file_name):
-        """
-        Only if file is a zip
-        """
-        self.zip = zipfile.ZipFile(io.BytesIO(self.data.content))
-        return self.zip.read(file_name)
-
 if __name__=="__main__":
     # a = cvm_builder("http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/HIST/inf_diario_fi_2021.zip")
     # a.get_data()
