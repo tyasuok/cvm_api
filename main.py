@@ -21,12 +21,6 @@ class cvm_dados:
         self.zip = zipfile.ZipFile(io.BytesIO(self.data.content))
         return self.zip.read(file_name)
 
-class inf_diario(cvm_dados):
-    def __init__(self, ano):
-        super().__init__(f"http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/HIST/inf_diario_fi_{ano}.zip")
-
-# ihfa api da anbima
-
 if __name__=="__main__":
     # a = cvm_builder("http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/HIST/inf_diario_fi_2021.zip")
     # a.get_data()
